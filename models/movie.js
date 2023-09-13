@@ -14,8 +14,9 @@ const movieSchema = new mongoose.Schema({
   },
   vote_average: {
     type: Number
-  }
-  
+  },
+  directors: [{ type: String }],
+  actors: [{ type: String }]
 });
 
 module.exports = mongoose.model("Movie", movieSchema);

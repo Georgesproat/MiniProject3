@@ -6,7 +6,6 @@ const mongoose = require("mongoose");
 const mongoDBURI = "mongodb://127.0.0.1/movieDB";
 const movieRoutes = require("./routes/movieRoutes");
 
-
 mongoose.connect(mongoDBURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -20,7 +19,6 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 db.once("open", () => {
   console.log("Connected to MongoDB!");
 
-  
   app.use("/api/movies", movieRoutes);
 
   const PORT = process.env.PORT || 8080;
