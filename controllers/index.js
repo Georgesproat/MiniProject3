@@ -1,3 +1,5 @@
 module.exports = {
-  movieController: require("./movieController")
+  movieController: require("./movieController"),
+  actorController: require("./actorController"),
+  directorController: require("./directorController")
 };

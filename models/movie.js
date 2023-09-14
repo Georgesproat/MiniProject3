@@ -15,8 +15,19 @@ const movieSchema = new mongoose.Schema({
   vote_average: {
     type: Number
   },
-  directors: [{ type: String }],
-  actors: [{ type: String }]
+  directors: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Director"
+    }
+  ],
+  actors: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Actor"
+    }
+  ]
 });
+
 
 module.exports = mongoose.model("Movie", movieSchema);
