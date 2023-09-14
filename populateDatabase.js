@@ -24,7 +24,7 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 db.once("open", () => {
   console.log("Connected to MongoDB!");
 
-  // Fetch the top 100 rated movies from TMDb API
+  // Fetch the top rated movies from TMDb API
   fetch(
     `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=vote_average.desc&vote_count.gte=100&page=1`,
     options
@@ -45,7 +45,7 @@ db.once("open", () => {
             // Extract relevant movie data
             const { title, overview, release_date } = movieData;
 
-            // Create a new Movie instance and set its properties
+            // Create a new Movie & properties
             const movie = new Movie({
               title,
               overview,

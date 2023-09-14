@@ -8,7 +8,7 @@ router.post("/", movieController.createMovie);
 router.get("/", movieController.getAllMovies);
 
 // Retrieve a single movie by ID
-router.get("/:id", movieController.getMovieById);
+router.get("/;id", movieController.getMovieById);
 
 // Update a movie by ID
 router.put("/:id", movieController.updateMovie);

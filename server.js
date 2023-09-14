@@ -5,6 +5,8 @@ const app = express();
 const mongoose = require("mongoose");
 const mongoDBURI = "mongodb://127.0.0.1/movieDB";
 const movieRoutes = require("./routes/movieRoutes");
+const actorRoutes = require("./routes/actorRoutes");
+const directorRoutes = require("./routes/directorRoutes");
 
 mongoose.connect(mongoDBURI, {
   useNewUrlParser: true,
@@ -20,6 +22,8 @@ db.once("open", () => {
   console.log("Connected to MongoDB!");
 
   app.use("/api/movies", movieRoutes);
+  app.use("/api/actors", actorRoutes);
+  app.use("/api/directors", directorRoutes);
 
   const PORT = process.env.PORT || 8080;
 
